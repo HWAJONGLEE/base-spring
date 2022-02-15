@@ -13,6 +13,8 @@ repositories {
 }
 
 dependencies {
+	//compile('org.springframework.boot:spring-boot-devtools') // 그래들 버전에 따라 디펜던시 설정이 다름, 7버전에서는 compile 대신 implementation 사용해야함
+ 	implementation 'org.springframework.boot:spring-boot-devtools'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
