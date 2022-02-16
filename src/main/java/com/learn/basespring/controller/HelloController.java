@@ -42,8 +42,8 @@ public class HelloController {
 			return name;
 		}
 		
-		public String setName(String name) {
-			return this.name = name;
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 }
