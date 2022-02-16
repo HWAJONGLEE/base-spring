@@ -13,10 +13,12 @@ repositories {
 }
 
 dependencies {
-	//compile('org.springframework.boot:spring-boot-devtools') // ±×·¡µé ¹öÀü¿¡ µû¶ó µğÆæ´ø½Ã ¼³Á¤ÀÌ ´Ù¸§, 7¹öÀü¿¡¼­´Â compile ´ë½Å implementation »ç¿ëÇØ¾ßÇÔ
- 	implementation 'org.springframework.boot:spring-boot-devtools'
+	//compile('org.springframework.boot:spring-boot-devtools') ê·¸ë˜ë“¤ ë²„ì „ì— ë”°ë¼ ë””íœë˜ì‹œ ì„¤ì •ì´ ë‹¤ë¦„, 7ë²„ì „ì—ì„œëŠ” compile ëŒ€ì‹  implementation ì‚¬ìš©í•´ì•¼í•¨
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	
+ 	// implementation 'org.springframework.boot:spring-boot-devtools'
+ 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
