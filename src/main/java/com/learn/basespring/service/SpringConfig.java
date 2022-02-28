@@ -1,32 +1,33 @@
 package com.learn.basespring.service;
 
-import javax.sql.DataSource;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.learn.basespring.repository.JdbcMemberRepository;
+import com.learn.basespring.aop.TimeTraceAop;
 import com.learn.basespring.repository.MemberRepository;
 //di 주입방식중에 하나 @Repository 어노테이션 없이 bean 객체 생성
 @Configuration
 public class SpringConfig {
 
-	private DataSource dataSource;
+	private final MemberRepository memberRepository;
 	
-	@Autowired
-	public SpringConfig(DataSource dataSource) {
-		this.dataSource = dataSource;
+	public SpringConfig(MemberRepository memberRepository) {
+		this.memberRepository = memberRepository;
 	}
 	
 	@Bean
 	public MemberService memberService() {
-		return new MemberService(memberRepository());
+		return new MemberService(memberRepository);
 	}
 	
 	@Bean
-	public MemberRepository memberRepository() {
-//		return new MemoryMemberRepository();
-		return new JdbcMemberRepository(dataSource);
+	public TimeTraceAop timeTraceAop() {
+		return new TimeTraceAop();
 	}
+	//@Bean
+	//public MemberRepository memberRepository() {
+		//return new MemoryMemberRepository();
+		//return new JdbcMemberRepository(dataSource);
+		//return new JpaMemberRepository(em);
+	//}
 }
