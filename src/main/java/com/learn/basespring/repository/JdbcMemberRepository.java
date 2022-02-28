@@ -9,11 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.jdbc.datasource.DataSourceUtils;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 
 import com.learn.basespring.domain.Member;
 
+@Repository
 public class JdbcMemberRepository implements MemberRepository {
 
 	private final DataSource dataSource;

@@ -3,12 +3,15 @@ package com.learn.basespring.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Service;
 
 import com.learn.basespring.domain.Member;
 import com.learn.basespring.repository.MemberRepository;
 
-@Service
+//@Service
+@Transactional
 public class MemberService {
 	
 	private final MemberRepository memberRepository;
@@ -18,7 +21,6 @@ public class MemberService {
 	}
 	
 	public Long join(Member member) {
-		
 		validateDuplicateMember(member); //중복 회원 검증
 		memberRepository.save(member);
 		
